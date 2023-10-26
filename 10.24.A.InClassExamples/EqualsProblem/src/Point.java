@@ -3,19 +3,21 @@ public class Point {
     private int x;
     private int y;
 
+    @Override
+    public boolean equals(Object o) {
+        if (o != null && getClass() == o.getClass()) {
+            Point other = (Point) o;
+            return x == other.x && y == other.y;
+        } else {
+            return false;
+        }
+    }
+
+
     //All constructors must initialize all data of a class!
     //default constructor
     public Point() {
         this(0, 0);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Point) {
-            Point p = (Point) obj;
-            return x == p.x && y == p.y;
-        }
-        return false;
     }
 
     //constructor 2 with parameters
